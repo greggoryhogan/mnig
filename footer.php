@@ -5,7 +5,8 @@
                     <div class="clip-text mb-3">Contact</div>
                     <p class="contactlinks">
                         <a href="" title="Call me" class="telto d-block d-sm-inline-block"><?php echo featherIcon('phone-call'); ?>&nbsp;<span class="text"></span></a>
-                        <a href="" title="Email me" class="mailto ml-0 ml-sm-3 mt-2 mt-sm-0 d-block d-sm-inline-block"><?php echo featherIcon('mail'); ?>&nbsp;<span class="text"></span</span></a>
+                        <a href="" title="Email me" class="mailto ml-0 ml-sm-3 mt-2 mt-sm-0 d-block d-sm-inline-block"><?php echo featherIcon('mail'); ?>&nbsp;<span class="text"></span></a>
+                        <a href="https://github.com/greggoryhogan" title="Github" class="ml-0 ml-sm-3 mt-2 mt-sm-0 d-block d-sm-inline-block"><?php echo featherIcon('github'); ?>&nbsp;<span class="text">@greggoryhogan</span></a>
                     </p>
                 </div>
                 <div class="col-12 mb-0 pt-3 pb-5 pr-5 pl-5 text-center">
