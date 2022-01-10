@@ -28,7 +28,7 @@
             </div>
             
             <?php 
-            if(is_page('web-development')) { ?>
+            if(is_page('web-development') || is_page('contracting') || is_page('about')) { ?>
                 <div class="col-12 mt-5 mb-0 pt-0 pb-0 pr-5 pl-5 text-center">
                     <div class="clip-text smaller mb-3">Recent Work</div>
                 </div>
