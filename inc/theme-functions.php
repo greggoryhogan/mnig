@@ -70,8 +70,10 @@ function no_single_cpts() {
     if(is_single() && get_post_type() == 'project') {
         $single_checked = get_post_meta(get_the_ID(),'project-single-view',true);
         if($single_checked != 1) {
-            wp_redirect(get_bloginfo('url').'/web-development/');
-            exit;
+            if(get_current_user_id() == 0) {
+                wp_redirect(get_bloginfo('url').'/web-development/');
+                exit;
+            }
         }
     }
 }
@@ -137,14 +139,15 @@ function gregg_portfolio($category,$max) {
                         echo '<div class="overlay" style="background-color:'.get_post_meta($post_id,'client-background-color',true).'"></div>';
                         echo '<div class="content pl-4 pb-2 pr-4 pt-2 d-flex align-items-center flex-column justify-content-center">';
                             echo apply_filters('the_content',get_post_meta($post_id,'project-teaser',true));
-                            $link = get_post_meta($post_id,'project-link',true);
-                            if($link) {
-                                echo '<a href="'.$link.'" rel="nofollow" target="_blank" aria-label="Open project in new window" class="btn btn-primary mt-2 pt-2 pl-3 pr-2 pt-1 pb-1">Visit Website'. featherIcon('chevron-right','hover-ml-2').'</a>';
-                            }
                             $single_checked = get_post_meta($post_id,'project-single-view',true);
                             if($single_checked == 1) {
                                 echo '<a href="'.get_permalink().'" aria-label="View Project" class="btn btn-primary mt-2 pt-2 pl-3 pr-2 pt-1 pb-1">View Project'. featherIcon('chevron-right','hover-ml-2').'</a>';
                             }
+                            $link = get_post_meta($post_id,'project-link',true);
+                            if($link) {
+                                echo '<a href="'.$link.'" rel="nofollow" target="_blank" aria-label="Open project in new window" class="btn btn-primary mt-2 pt-2 pl-3 pr-2 pt-1 pb-1">Visit Website'. featherIcon('chevron-right','hover-ml-2').'</a>';
+                            }
+                            
 
                         echo '</div>';
                     echo '</div>';
