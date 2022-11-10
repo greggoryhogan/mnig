@@ -12,7 +12,7 @@
                 <div class="col-12 mb-0 pt-3 pb-5 pr-5 pl-5 text-center">
                     <div>
                     <div class="mb-4 border-bottom"></div>
-                    <?php echo do_shortcode('[gravityform id="1" title="false" description="false" ajax="true"]'); ?>
+                    <div class="text-left"><?php echo do_shortcode('[gravityform id="1" title="false" description="false" ajax="true"]'); ?></div>
                 </div>
             </div>
         </div>

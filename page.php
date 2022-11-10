@@ -13,7 +13,7 @@
                 <div class="col-12 pr-sm-5 pl-sm-5 text-center" data-aos="fade-up" data-aos-offset="10">
                     <?php echo $teaser; ?>
                 </div>
-                <div class="col-lg-8 offset-lg-2 mb-2 pb-5 pr-5 pl-5 text-center" data-aos="fade-up" data-aos-offset="10">
+                <div class="col-lg-8 offset-lg-2 mb-0 pb-5 pr-5 pl-5 text-center" data-aos="fade-up" data-aos-offset="10">
                     <div class="mt-4 border-top"></div>
                 </div>
             <?php } ?>

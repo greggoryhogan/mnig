@@ -106,6 +106,8 @@ function gregg_portfolio($category,$max) {
                 )
             ),
             'posts_per_page' => $max,
+            'no_found_rows' => true, // counts posts, remove if you need pagination
+            'update_post_term_cache' => false, // queries terms, remove if you need categories or tags
         ) );
     } else {
         $the_query = new WP_Query( array(
@@ -118,6 +120,8 @@ function gregg_portfolio($category,$max) {
                 )
             ),
             'posts_per_page' => $max,
+            'no_found_rows' => true, // counts posts, remove if you need pagination
+	        'update_post_term_cache' => false, // queries terms, remove if you need categories or tags
         ) );
     }
     if($the_query->have_posts()) {
