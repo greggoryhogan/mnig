@@ -42,6 +42,7 @@
                 <button class="simple-button pl-0 pagejump orange-hover" data-scrollto="learnmore">Learn More <?php echo featherIcon('chevron-down'); ?></button>
             </div>
         </div>
+        <button class="simple-button pl-0 pagejump orange-hover scroll-to-position-bottom" data-scrollto="learnmore"><?php echo featherIcon('chevron-down','','30'); ?></button>
     </section>   
 <?php } ?> 
 <main>
