@@ -2,7 +2,7 @@
 Theme Name: My Name Is Gregg
 Author: Gregg Hogan
 Description: It's for a me! Hogie-o!
-Version: 1.51
+Version: 1.59
 Text Domain: mnig
 */
 
@@ -332,7 +332,16 @@ input {
         flex-direction: column-reverse;
     }
 }
-
+@media all and (min-width: 768px) {
+    .mobile-only {
+        display: none;
+    }
+}
+@media all and (max-width: 7687px) {
+    .desktop-only {
+        display: none;
+    }
+}
 
 
 .testimonials p {
@@ -494,4 +503,10 @@ transition: .1s opacity;
     bottom: 15px;
     left: 50%;
     margin-left: -13px;
+}
+.mt--100 {
+    margin-top: -100px;
+}
+.w-100 {
+    width: 100%;
 }

@@ -28,7 +28,7 @@
 </header>
 <?php if(is_home() || is_front_page()) { ?>
     <section id="greggintro" class="primary-bg vh-100 d-flex align-items-center">
-        <div class="container position-relative hero-container d-block d-sm-flex text-center text-sm-left">
+        <div class="container position-relative hero-container d-block d-sm-flex text-center text-sm-left mt--100">
             <div class="me mr-2 d-flex justify-content-center">
                 <img class="mr-0 mr-sm-4 has-shake lozad" data-src="<?php echo get_bloginfo('template_url'); ?>/assets/img/gregg.svg" />
             </div>

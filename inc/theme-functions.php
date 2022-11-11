@@ -141,7 +141,7 @@ function gregg_portfolio($category,$max) {
                             }
                         echo '</div>';
                         echo '<div class="overlay" style="background-color:'.get_post_meta($post_id,'client-background-color',true).'"></div>';
-                        echo '<div class="content pl-4 pb-2 pr-4 pt-2 d-flex align-items-center flex-column justify-content-center">';
+                        echo '<div class="content pl-4 pb-2 pr-4 pt-2 d-flex align-items-center flex-column justify-content-center desktop-only">';
                             echo apply_filters('the_content',get_post_meta($post_id,'project-teaser',true));
                             $single_checked = get_post_meta($post_id,'project-single-view',true);
                             if($single_checked == 1) {
@@ -154,6 +154,18 @@ function gregg_portfolio($category,$max) {
                             
 
                         echo '</div>';
+
+                        
+                    echo '</div>';
+
+                    echo '<div class="mobile-only mobile-links w-100">';
+                        echo '<p>'.get_post_meta($post_id,'project-teaser',true).'</p>';
+                        if($single_checked == 1) {
+                            echo '<a href="'.get_permalink().'" aria-label="View Project" class="btn btn-primary mt-2 pt-2 pl-3 pr-2 pt-1 pb-1 mr-1 mb-4">View Project'. featherIcon('chevron-right','hover-ml-2').'</a>';
+                        }
+                        if($link) {
+                            echo '<a href="'.$link.'" rel="nofollow" target="_blank" aria-label="Open project in new window" class="btn btn-primary ml-1 mt-2 pt-2 pl-3 pr-2 pt-1 pb-1 mb-4">Visit Website'. featherIcon('chevron-right','hover-ml-2').'</a>';
+                        }
                     echo '</div>';
                 endwhile;
             echo '</div>';
