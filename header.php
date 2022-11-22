@@ -15,7 +15,7 @@
     <div class="container position-relative hero-container">
         <div class="me mr-2">
             <a href="<?php echo get_bloginfo('url'); ?>" title="Home">
-                <img class="has-shake" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/gregg.svg" />
+                <img class="has-shake" src="<?php echo get_bloginfo('template_url'); ?>/assets/img/gregg.svg" alt="Gregg" />
             </a>
         </div>
         <nav>
@@ -30,19 +30,19 @@
     <section id="greggintro" class="primary-bg vh-100 d-flex align-items-center">
         <div class="container position-relative hero-container d-block d-sm-flex text-center text-sm-left mt--100">
             <div class="me mr-2 d-flex justify-content-center">
-                <img class="mr-0 mr-sm-4 has-shake lozad" data-src="<?php echo get_bloginfo('template_url'); ?>/assets/img/gregg.svg" />
+                <img class="mr-0 mr-sm-4 has-shake lozad" data-src="<?php echo get_bloginfo('template_url'); ?>/assets/img/gregg.svg" alt="Gregg" />
             </div>
             <div class="intro-text">
                 <!-- <p class="d-block h4 mb-3">Hello</p>-->
                 <p class="d-block h1 mt-2">Hi, my name is Gregg</p>
                 <div class="d-block h4 qualifications">I&rsquo;m a <div id="text" class="orange"></div><div id="cursor"></div></div>
                 
-                <button class="simple-button pl-0 pagejump orange-hover mr-0 mr-sm-5" data-scrollto="contact">Contact <?php echo featherIcon('phone-call'); ?></button>
+                <button class="simple-button pl-0 pagejump orange-hover mr-0 mr-sm-5" data-scrollto="contact" aria-label="Contact Me">Contact <?php echo featherIcon('phone-call'); ?></button>
 
-                <button class="simple-button pl-0 pagejump orange-hover" data-scrollto="learnmore">Learn More <?php echo featherIcon('chevron-down'); ?></button>
+                <button class="simple-button pl-0 pagejump orange-hover" data-scrollto="learnmore" aria-label="Continue to Content">Learn More <?php echo featherIcon('chevron-down'); ?></button>
             </div>
         </div>
-        <button class="simple-button pl-0 pagejump orange-hover scroll-to-position-bottom" data-scrollto="learnmore"><?php echo featherIcon('chevron-down','','30'); ?></button>
+        <button class="simple-button pl-0 pagejump orange-hover scroll-to-position-bottom" data-scrollto="learnmore" aria-label="Continue to Content"><?php echo featherIcon('chevron-down','','30'); ?></button>
     </section>   
 <?php } ?> 
 <main>
