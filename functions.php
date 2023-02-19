@@ -1,4 +1,4 @@
-<?php 
+<?php
 define( 'THEME_DIR', get_template_directory() );
 define( 'INC_DIR', THEME_DIR. '/inc' );
 
@@ -57,8 +57,12 @@ add_theme_support( 'menus' );
 add_theme_support( 'title-tag' );
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'responsive-embeds' );
-
 remove_action('wp_head', 'wp_generator');
+
+function remove_image_zoom_support() {
+  add_theme_support( 'wc-product-gallery-zoom' );
+}
+add_action( 'wp', 'remove_image_zoom_support', 100 );
 
 function greggs_menus() {
     register_nav_menu('main',__( 'Main' ));
@@ -144,3 +148,34 @@ function disable_emojis() {
  
  return $urls;
  }
+
+ add_filter('woocommerce_admin_meta_boxes_variations_per_page', function() {
+  return PHP_INT_MAX;
+});
+
+
+// Remove product images from the shop loop
+//remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 );
+
+add_filter( 'woocommerce_thankyou_order_received_text', 'misha_thank_you_subtitle', 20, 2 );
+
+function misha_thank_you_subtitle( $thank_you_title, $order ){
+
+	return 'Your order has been received! If you orded a custom book <strong>MARK</strong> you should expect an email shortly to confirm your details. <br>Thank you for supporting my weird hobbies.<br>-Gregg';
+
+}
+add_filter('woocommerce_single_product_zoom_options', 'custom_single_product_zoom_options', 10, 3 );
+function custom_single_product_zoom_options( $zoom_options ) {
+// Disable zoom magnify:
+  $zoom_options['magnify'] = 0;
+  return $zoom_options;
+}
+
+add_action('template_redirect','send_shop_to_single');
+function send_shop_to_single() {
+  if(function_exists('is_shop')) {
+    if(is_shop()) {
+      wp_redirect( get_bloginfo('url').'/product/book-mark-marks/', 302 );
+    }
+  }
+}

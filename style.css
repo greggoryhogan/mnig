@@ -2,7 +2,7 @@
 Theme Name: My Name Is Gregg
 Author: Gregg Hogan
 Description: It's for a me! Hogie-o!
-Version: 1.59
+Version: 1.75
 Text Domain: mnig
 */
 
@@ -194,6 +194,10 @@ pre {
     -webkit-text-fill-color: transparent;
     text-transform: uppercase;
     background-size: contain;
+}
+.clip-text span {
+    font-weight: 500;
+    text-transform: none;
 }
 .clip-text.smaller  {
     font-size:3vw;
@@ -453,6 +457,10 @@ transition: .1s opacity;
     font-weight: 600;
     color: #333;
   }
+  .portfolio-display .project .brand h3 span {
+    text-transform: none;
+    font-weight: 400;
+  }
   .portfolio-display .project.text-white h3 {
       color: #fff;
   }
@@ -495,7 +503,7 @@ transition: .1s opacity;
     font-size: 10vw;
   }
 }
-.gform_required_legend {
+.gform_requi#212529_legend {
     display: none!important;
 }
 .scroll-to-position-bottom {
@@ -509,4 +517,98 @@ transition: .1s opacity;
 }
 .w-100 {
     width: 100%;
+}
+.after-content .product {
+    text-align: center;
+}
+.after-content .product table {
+    margin: 0 auto 20px;
+}
+.after-content .product table .label,
+.after-content .woocommerce-loop-product__title {
+    display: none;
+}
+.woocommerce #content input.button.alt:hover, .woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover, .woocommerce-page #content input.button.alt:hover, .woocommerce-page #respond input#submit.alt:hover, .woocommerce-page a.button.alt:hover, .woocommerce-page button.button.alt:hover, .woocommerce-page input.button.alt:hover {
+    background:#212529 !important;
+    background-color:#212529 !important;
+    color:white !important;
+    text-shadow: transparent !important;
+    box-shadow: none;
+    border-color:#212529 !important;
+}
+.woocommerce #content input.button:hover, .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover, .woocommerce-page #content input.button:hover, .woocommerce-page #respond input#submit:hover, .woocommerce-page a.button:hover, .woocommerce-page button.button:hover, .woocommerce-page input.button:hover {
+    background:orange !important !important;
+    background-color:orange !important !important;
+    color:white !important;
+    text-shadow: transparent !important;
+    box-shadow: none;
+    border-color:orange !important !important;
+}
+.woocommerce #content input.button, .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce-page #content input.button, .woocommerce-page #respond input#submit, .woocommerce-page a.button, .woocommerce-page button.button, .woocommerce-page input.button {
+    background: #212529 !important;
+    color:white !important;
+    text-shadow: transparent !important;
+    border-color:#212529 !important;
+}
+.woocommerce #content input.button.alt:hover, .woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover, .woocommerce-page #content input.button.alt:hover, .woocommerce-page #respond input#submit.alt:hover, .woocommerce-page a.button.alt:hover, .woocommerce-page button.button.alt:hover, .woocommerce-page input.button.alt:hover {
+    background: orange !important !important;
+    box-shadow: none;
+    text-shadow: transparent !important;
+    color:white !important;
+    border-color:orange !important !important;
+}
+.woocommerce ul.products li.product .price {
+    color: #212529;
+    font-size: 1rem;
+}
+.woocommerce div.product p.price, .woocommerce div.product span.price {
+    color: #212529;
+}
+.woocommerce div.product form.cart .variations th,
+.product_meta {
+    display: none;
+}
+.woocommerce .quantity .qty {
+    border: 1px solid #212529;   
+}
+.woocommerce-billing-fields .form-row,
+.woocommerce-shipping-fields .form-row,
+.woocommerce form .form-row {
+  display: block;
+}
+
+.woocommerce .col2-set .col-1,
+.woocommerce-page .col2-set .col-1,
+.woocommerce .col2-set .col-2,
+.woocommerce-page .col2-set .col-2 {
+  max-width: unset;
+}
+.woocommerce form .form-row input.input-text, .woocommerce form .form-row textarea {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+.woocommerce form .form-row label, .woocommerce-page form .form-row label {
+    margin-bottom: 0;
+}
+.woocommerce .col2-set .col-1, .woocommerce-page .col2-set .col-1 {
+    padding: 0 0 20px 0;
+}
+.woocommerce-info {
+    border-top-color: #212529;
+}
+.woocommerce-info::before {
+    color: #212529;
+}
+.woocommerce ul.order_details {
+    padding-top: 30px;
+}
+.woocommerce .woocommerce-customer-details address {
+    padding: 0;
+    border: none;
+}
+.woocommerce-thankyou-order-received {
+    text-align: center;
+}
+.woocommerce-variation-price {
+    margin-bottom: 10px;
 }

@@ -1,7 +1,8 @@
 <!doctype html>
 <html lang="en">
 <head>
-<?php $title = get_bloginfo('name'); if(is_home() || is_front_page()) { $title .=  ': '.get_bloginfo('description'); } elseif(is_archive()) { $term = get_queried_object(); $title .= ': '.$term->name; }else { $title .=  ': '.get_the_title(); } ?>
+    <?php $filtered_title = str_replace('<span>','',str_replace('</span>','',get_the_title())); ?>
+<?php $title = get_bloginfo('name'); if(is_home() || is_front_page()) { $title .=  ': '.get_bloginfo('description'); } elseif(is_archive()) { $term = get_queried_object(); $title .= ': '.$term->name; }else { $title .=  ': '.$filtered_title; } ?>
 <title><?php echo $title; ?></title>
 <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <meta property="og:title" content="<?php echo $title; ?>" />

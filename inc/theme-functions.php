@@ -20,6 +20,7 @@ add_filter('wp_nav_menu_items', 'add_admin_link', 10, 2);
 function add_admin_link($items, $args){
     if( $args->theme_location == 'main' ){
         $items .= '<li><button class="simple-button pl-0 pagejump orange-hover" data-scrollto="contact"">Contact</button></li>';
+        $items .= '<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-322"><a href="'.get_bloginfo('url').'/cart/">Cart</a></li>';
     }
     return $items;
 }
@@ -335,8 +336,13 @@ add_filter( 'post_thumbnail_html', 'add_image_placeholders', 11 );
 add_filter( 'the_content', 'add_image_placeholders', 99 );
 function add_image_placeholders( $content ) {
 	// Don't lazyload for feeds, previews, mobile
-	if( is_feed() || is_preview() )
+	if( is_feed() || is_preview())
 		return $content;
+    if(function_exists('is_shop')) {
+        if(is_shop()) {
+            return $content;
+        }
+    }
 
 	// Don't lazy-load if the content has already been run through previously
 	if ( false !== strpos( $content, 'data-src' ) )

@@ -5,9 +5,20 @@
             <div class="col-12 mt-1 mb-0 pt-0 pb-0 pr-sm-5 pl-sm-5 text-center">
                 <div class="clip-text mb-3"><?php the_title(); ?></div>
             </div>
-            <div class="col-lg-8 offset-lg-2 pt-3 pb-0 pr-5 pl-5 text-center" data-aos="fade-up" data-aos-offset="10">
+            <div class="col-lg-8 offset-lg-2 pt-3 pb-0 pr-5 pl-5 text-center"> <!--data-aos="fade-up" data-aos-offset="10"-->
                 <div class="mb-4 border-bottom"></div>
             </div>
+
+            <?php if(function_exists('get_field')) {
+                $before_content = get_field('before_content');
+                if($before_content != '') { 
+                    
+                    echo '<div class="col-lg-8 offset-lg-2 mb-0 pb-1 pr-5 pl-5">';
+                        echo $before_content;
+                    echo '</div>';
+                }
+            } ?>
+
             <div class="col-12 pr-sm-5 pl-sm-5 main-content" data-aos="fade-up" data-aos-offset="10">
                 <?php if ( have_posts() ) : 
                     while ( have_posts() ) : the_post();
@@ -17,11 +28,34 @@
                     _e( 'Hmmm, nothing here.', 'textdomain' );
                 endif; ?>
             </div>
-            <div class="col-lg-8 offset-lg-2 mb-5 pb-5 pr-5 pl-5 text-center" data-aos="fade-up" data-aos-offset="10">
-                <div class="mt-4 border-top"></div>
-            </div>
+
+            
+
+            <?php if(function_exists('get_field')) {
+                $after_content = get_field('after_content');
+                if($after_content != '') { ?>
+                    <div class="col-lg-8 offset-lg-2 mb-3 pb-3 pr-5 pl-5 text-center">
+                        <div class="mt-4 border-top"></div>
+                    </div>
+                <?php 
+                    echo '<div class="col-lg-8 offset-lg-2 mb-5 pb-5 pr-5 pl-5 after-content">';
+                        echo $after_content;
+                    echo '</div>';
+                }
+            } else { ?>
+                <div class="col-lg-8 offset-lg-2 mb-5 pb-5 pr-5 pl-5 text-center" data-aos="fade-up" data-aos-offset="10">
+                    <div class="mt-4 border-top"></div>
+                </div>
+            <?php } ?>
         
             <?php 
+            if(is_single() && get_post_type() == 'product') {
+                ?>
+                <div class="col-lg-8 offset-lg-2 mt-5 pt-5 mb-5 pb-5 pr-5 pl-5 text-center">
+                   
+                </div><?php 
+            }
+
             if(is_single() && get_post_type() == 'project') {
 
                 $categories = get_the_terms(get_the_ID(),'project-category');
