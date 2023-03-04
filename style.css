@@ -2,7 +2,7 @@
 Theme Name: My Name Is Gregg
 Author: Gregg Hogan
 Description: It's for a me! Hogie-o!
-Version: 1.82
+Version: 1.87
 Text Domain: mnig
 */
 
@@ -44,6 +44,9 @@ a:visited {
     padding: 0;
     color: inherit!important;
     font-size:1em;
+}
+.text-left {
+    text-align: left;
 }
 .wp-block-button.btn-primary a:hover,
 .wp-block-button.btn-primary a:focus,
@@ -232,6 +235,7 @@ div.gradient {
     background: none;
     border: none;
     color: inherit;
+    padding: 0;
 }
 /*
 Feather icons
@@ -301,6 +305,9 @@ input {
         margin-left: 30px;
     }
 }
+.header-menu  ul li a {
+    text-decoration: none;
+}
 .header-menu  ul li.current-menu-item a,
 .header-menu  ul li a:hover {
     color: orange;
@@ -353,9 +360,18 @@ input {
         display: none;
     }
 }
-@media all and (max-width: 7687px) {
+@media all and (max-width: 767px) {
     .desktop-only {
         display: none;
+    }
+    .mobile-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .mobile-links a.btn {
+        margin-bottom: .5rem!important;
+        padding: .5rem .3rem .3rem 1rem!important;
     }
 }
 
@@ -407,6 +423,11 @@ input {
   .clients img:hover {
     border-top:5px solid #5aa9cf;
     opacity: 1;
+  }
+  @media all and (max-width: 767px) {
+    .portfolio-display {
+        margin: 0;
+    }
   }
   .portfolio-display .project {
       margin: 15px;

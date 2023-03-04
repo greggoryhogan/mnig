@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <?php $term = get_queried_object(); ?>
-<div class="white-bg mt-5 pt-5">
+<div class="white-bg mt-5 pt-4">
     <div class="container mt-3 pt-3">
         <div class="row">
             <div class="col-12 mt-1 mb-0 pt-0 pb-0 pr-sm-5 pl-sm-5 text-center">
