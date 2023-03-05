@@ -2,10 +2,14 @@
 Theme Name: My Name Is Gregg
 Author: Gregg Hogan
 Description: It's for a me! Hogie-o!
-Version: 1.87
+Version: 1.95
 Text Domain: mnig
 */
-
+@media (min-width: 1400px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    max-width: 1220px;
+    }
+}
 html,
 body {
     margin: 0;
@@ -71,6 +75,9 @@ img[src] {
 .main-content a:hover {
     color:orange;
     text-decoration: underline;
+}
+.main-content figure img {
+    margin: 0 auto;
 }
 img {
     display: block;
@@ -298,6 +305,7 @@ input {
 @media all and (max-width: 480px) {
     .header-menu  ul {
         justify-content: space-around;
+        padding-left: 4rem;
     }
 }
 @media all and (min-width: 481px) {
@@ -430,9 +438,7 @@ input {
     }
   }
   .portfolio-display .project {
-      margin: 15px;
-      width: 100%;
-    padding-bottom: 40%;
+    padding-bottom: 140%;
     border-radius: 6px;
     overflow: hidden;
     background-size: cover;
@@ -464,6 +470,7 @@ input {
     opacity: 1;
     z-index: 3;
     transform: translate(-50%,-50%);
+    padding: 15px;
   }
   .portfolio-display .project .brand {
     display: flex;
@@ -655,7 +662,16 @@ transition: .1s opacity;
 @media all and (max-width: 767px) {
     .woocommerce #content div.product div.images, .woocommerce div.product div.images, .woocommerce-page #content div.product div.images, .woocommerce-page div.product div.images,
     .woocommerce #content div.product div.summary, .woocommerce div.product div.summary, .woocommerce-page #content div.product div.summary, .woocommerce-page div.product div.summary {
+        width: 100%!important;
+        float: none!important;
+    }
+    .products.columns-1 li.product {
+        width: 100%!important;
+    }
+    .single-product .woocommerce-variation-add-to-cart {
+        justify-content: center;
+    }
+    .woocommerce div.product form.cart .variations select {
         width: 100%;
-        float: none;
     }
 }

@@ -20,7 +20,7 @@ add_filter('wp_nav_menu_items', 'add_admin_link', 10, 2);
 function add_admin_link($items, $args){
     if( $args->theme_location == 'main' ){
         $items .= '<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-322"><button class="simple-button pl-0 pagejump orange-hover" data-scrollto="contact"">Contact</button></li>';
-        $items .= '<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-322"><a href="'.get_bloginfo('url').'/cart/">Cart</a></li>';
+        $items .= '<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323"><a href="'.get_bloginfo('url').'/cart/">Cart</a></li>';
     }
     return $items;
 }
@@ -127,36 +127,38 @@ function gregg_portfolio($category,$max) {
     }
     if($the_query->have_posts()) {
         echo '<div class="ml-3 mr-3">';
-            echo '<div class="portfolio-display row">';
+            echo '<div class="portfolio-display row gx-3 gy-3 justify-content-center">';
                 while ( $the_query->have_posts() ) :
                     $the_query->the_post();
                     $post_id = get_the_ID();
                     $bg = get_post_meta($post_id,'project_background_image_id',true);
                     $bg_image = wp_get_attachment_image_src($bg,'full');
-                    echo '<div data-background-image="'.$bg_image[0].'" class="lozad col-12 col-md project '.get_post_meta($post_id,'project-classes',true).'">';
-                        echo '<div class="brand">';
-                            if(has_post_thumbnail()) {
-                                echo get_the_post_thumbnail( $page->ID, 'full',array( 'class' => 'lozad' ) );
-                            } else {
-                                echo '<h3>'.get_the_title().'</h3>';
-                            }
-                        echo '</div>';
-                        echo '<div class="overlay" style="background-color:'.get_post_meta($post_id,'client-background-color',true).'"></div>';
-                        echo '<div class="content pl-4 pb-2 pr-4 pt-2 d-flex align-items-center flex-column justify-content-center desktop-only">';
-                            echo apply_filters('the_content',get_post_meta($post_id,'project-teaser',true));
-                            $single_checked = get_post_meta($post_id,'project-single-view',true);
-                            if($single_checked == 1) {
-                                echo '<a href="'.get_permalink().'" aria-label="View Project" class="btn btn-primary mt-2 pt-2 pl-3 pr-2 pt-1 pb-1">View Project'. featherIcon('chevron-right','hover-ml-2').'</a>';
-                            }
-                            $link = get_post_meta($post_id,'project-link',true);
-                            if($link) {
-                                echo '<a href="'.$link.'" rel="nofollow" target="_blank" aria-label="Open project in new window" class="btn btn-primary mt-2 pt-2 pl-3 pr-2 pt-1 pb-1">Visit Website'. featherIcon('chevron-right','hover-ml-2').'</a>';
-                            }
+                    echo '<div class="portfolio-container col-sm-12 col-md-6 col-lg-3">';
+                        echo '<div data-background-image="'.$bg_image[0].'" class="lozad project '.get_post_meta($post_id,'project-classes',true).'">';
+                            echo '<div class="brand">';
+                                if(has_post_thumbnail()) {
+                                    echo get_the_post_thumbnail( $page->ID, 'full',array( 'class' => 'lozad' ) );
+                                } else {
+                                    echo '<h3>'.get_the_title().'</h3>';
+                                }
+                            echo '</div>';
+                            echo '<div class="overlay" style="background-color:'.get_post_meta($post_id,'client-background-color',true).'"></div>';
+                            echo '<div class="content pl-4 pb-2 pr-4 pt-2 d-flex align-items-center flex-column justify-content-center desktop-only">';
+                                echo apply_filters('the_content',get_post_meta($post_id,'project-teaser',true));
+                                $single_checked = get_post_meta($post_id,'project-single-view',true);
+                                if($single_checked == 1) {
+                                    echo '<a href="'.get_permalink().'" aria-label="View Project" class="btn btn-primary mt-2 pt-2 pl-3 pr-2 pt-1 pb-1">View Project'. featherIcon('chevron-right','hover-ml-2').'</a>';
+                                }
+                                $link = get_post_meta($post_id,'project-link',true);
+                                if($link) {
+                                    echo '<a href="'.$link.'" rel="nofollow" target="_blank" aria-label="Open project in new window" class="btn btn-primary mt-2 pt-2 pl-3 pr-2 pt-1 pb-1">Visit Website'. featherIcon('chevron-right','hover-ml-2').'</a>';
+                                }
+                                
+
+                            echo '</div>';
+
                             
-
                         echo '</div>';
-
-                        
                     echo '</div>';
 
                     echo '<div class="mobile-only mobile-links w-100">';

@@ -36,7 +36,7 @@
                     <div class="mb-4 border-bottom"></div>
                 </div>
                 <div class="col-12 mt-0 mb-4 pt-0 pb-5 mb-5 text-center">
-                    <?php gregg_portfolio('web-development',-1); ?>
+                    <?php gregg_portfolio('web-development',4); ?>
                 </div><?php 
             }?>
             

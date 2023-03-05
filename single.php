@@ -5,7 +5,7 @@
             <div class="col-12 mt-1 mb-0 pt-0 pb-0 pr-sm-5 pl-sm-5 text-center">
                 <div class="clip-text mb-3"><?php the_title(); ?></div>
             </div>
-            <div class="col-lg-8 offset-lg-2 pt-3 pb-0 pr-5 pl-5 text-center"> <!--data-aos="fade-up" data-aos-offset="10"-->
+            <div class="col-lg-8 offset-lg-2 pt-3 pb-0 pr-5 pl-5"> <!--data-aos="fade-up" data-aos-offset="10"-->
                 <div class="mb-4 border-bottom"></div>
             </div>
 
@@ -13,13 +13,13 @@
                 $before_content = get_field('before_content');
                 if($before_content != '') { 
                     
-                    echo '<div class="col-lg-8 offset-lg-2 mb-0 pb-1 pr-5 pl-5">';
+                    echo '<div class="col-lg-8 offset-lg-2 mb-0 pb-1 pr-5 pl-5 text-center">';
                         echo $before_content;
                     echo '</div>';
                 }
             } ?>
 
-            <div class="col-12 pr-sm-5 pl-sm-5 main-content" data-aos="fade-up" data-aos-offset="10">
+            <div class="col-12 pr-sm-5 pl-sm-5 main-content text-center" data-aos="fade-up" data-aos-offset="10">
                 <?php if ( have_posts() ) : 
                     while ( have_posts() ) : the_post();
                         the_content();
