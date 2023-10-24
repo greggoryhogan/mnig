@@ -437,6 +437,10 @@ input {
     .portfolio-display {
         margin: 0;
     }
+    .portfolio-container {
+        padding-left: 0;
+        padding-right: 0;
+    }
   }
   .portfolio-display .project {
     padding-bottom: 140%;
