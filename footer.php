@@ -16,7 +16,7 @@
                     <div class="text-left"><?php echo do_shortcode('[gravityform id="1" title="false" description="false" ajax="true"]'); ?></div>
                 </div>
                 <div class="col-12 mb-0 pt-5 pb-0 text-sm-right text-center">
-                    <a href="https://wpengine.com/partnerspecialoffer/?w_agcid=CScbnetN" class="d-inline-block" title="WP Engine Partner" target="_blank"><img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/wpe.png" alt="WP Engine Partner" style="width: 75px;" /></a>
+                    <a href="https://wpengine.com/partnerspecialoffer/?w_agcid=CScbnetN" class="d-inline-block" title="WP Engine Partner" target="_blank"><img src="<?php echo get_bloginfo('template_url'); ?>/assets/img/wpe-member.png" alt="WP Engine Partner" style="width: 75px;" /></a>
                 </div>
             </div>
         </div>

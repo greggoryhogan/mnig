@@ -94,7 +94,8 @@ function gregg_ga() {
     <?php 
 }
 
-function gregg_portfolio($category,$max) {
+function gregg_portfolio($category,$max, $view_all = true) {
+    
     if(is_single()) {
         $the_query = new WP_Query( array(
             'post_type' => 'project',
@@ -173,6 +174,12 @@ function gregg_portfolio($category,$max) {
                 endwhile;
             echo '</div>';
         echo '</div>';
+        if($view_all) {
+            $term_link = get_term_link($category,'project-category');
+            if(!is_wp_error($term_link)) {
+                echo '<a href="'.$term_link.'" title="View all" class="portfolio-link">View all</a>';
+            }
+        }
     } else {
         echo '<p class="font-italic">Portfolio under development</p>';
     }

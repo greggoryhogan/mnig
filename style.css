@@ -2,7 +2,7 @@
 Theme Name: My Name Is Gregg
 Author: Gregg Hogan
 Description: It's for a me! Hogie-o!
-Version: 1.96
+Version: 2.0.2
 Text Domain: mnig
 */
 @media (min-width: 1400px) {
@@ -24,6 +24,7 @@ body {
 }
 .btn-primary,
 .wp-block-button {
+    color: #fff!important;
     background:#212529;
     border:none;
 }
@@ -32,6 +33,7 @@ body {
 .btn-primary:focus {
     background:#212529!important;
     color:orange!important;
+    text-decoration: none!important;
 }
 .btn-primary.orange-hover:hover,
 .btn-primary.orange-hover:active,
@@ -289,10 +291,22 @@ Feather icons
     font-size: 1.2em!important;
     border-radius: 3px;
     padding: 10px 40px;
+    color: #212529!important;
 }
-.gform_button.button:hover {
-    color: #fff;
+.portfolio-link {
+    display: inline-block;
+    background: orange;
+    border: none;
+    border-radius: 3px;
+    padding: 8px 40px 6px;
+    color: #212529!important;
+}
+
+.gform_button.button:hover,
+.portfolio-link:hover {
+    color: #fff!important;
     background:#212529;
+    text-decoration: none;
 }
 input {
     border:none;
@@ -440,8 +454,17 @@ input {
     .portfolio-container {
         padding-left: 0;
         padding-right: 0;
+        margin-bottom: 10px;
+    }
+    .mobile-links {
+        margin-bottom: 30px;
     }
   }
+  @media all and (min-width: 768px) {
+    .portfolio-container {
+        margin-bottom: 30px;
+    }   
+}
   .portfolio-display .project {
     padding-bottom: 140%;
     border-radius: 6px;
